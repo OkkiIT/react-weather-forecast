@@ -1,9 +1,20 @@
 import React from "react";
+import { Provider } from "react-redux";
 
-function App() {
+import store from "./store";
+import Find from "./components/Find";
+import { AppContainer } from "./components/styled";
+import WeatherCard from "./components/WeatherCard";
+
+const App = () => {
   return (
-    <div><h1>kek</h1></div>
+    <Provider store={store}>
+      <AppContainer>
+        <Find />
+        <WeatherCard />
+      </AppContainer>
+    </Provider>
   );
-}
+};
 
 export default App;
