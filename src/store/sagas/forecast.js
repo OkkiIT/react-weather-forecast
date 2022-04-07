@@ -9,7 +9,7 @@ function* fetchForecastt({ payload }) {
     const data = yield call(fetchForecast, payload.city);
     yield put(fetchForecastSuccess(data));
   } catch (error) {
-    yield put(fetchForecastFailure("Попробуйте еще раз."));
+    yield put(fetchForecastFailure(error.message));
   }
 }
 

@@ -13,8 +13,10 @@ const Find = () => {
   const forecast = useSelector(forecastSelector);
 
   const onChange = newValue => {
-    const { value } = newValue;
-    newValue && dispatch(addCity({ value }));
+    if(newValue){
+      const { value } = newValue;
+      dispatch(addCity({ value }));
+    }
   };
 
   const dispatchForecast = () => {
